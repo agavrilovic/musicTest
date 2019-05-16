@@ -1,0 +1,142 @@
+{
+	"tracks": [
+		{
+			"name": "Burrows theme",
+			"track": "example.ogg",
+			"movements": [
+				{
+					"name": "Burrows Intro",
+					"type": "bridge",
+					"mood": "default",
+					"timeStart": 0,
+					"timeEnd": 21,
+					"startpoints": [
+						{
+							"timestamp": 0,
+							"tonality": "C",
+							"measure": "4/4"
+						}
+					],
+					"endpoints": [
+						{
+							"timestamp": 15,
+							"tonality": "d",
+							"measure": "4/4"
+						},
+						{
+							"timestamp": 21,
+							"tonality": "C",
+							"measure": "4/4"
+						}
+					]
+				},
+				{
+					"name": "Burrows Main Theme",
+					"type": "loop",
+					"mood": "default",
+					"timeStart": 21,
+					"timeEnd": 42,
+					"startpoints": [
+						{
+							"timestamp": 21,
+							"tonality": "C",
+							"measure": "4/4"
+						}
+					],
+					"endpoints": [
+						{
+							"timestamp": 30,
+							"tonality": "d",
+							"measure": "4/4"
+						},
+						{
+							"timestamp": 42,
+							"tonality": "C",
+							"measure": "4/4"
+						}
+					]
+				}
+			]
+		},
+		
+		{
+			"name": "Orville theme",
+			"track": "example.ogg",
+			"movements": [
+				{
+					"name": "Burrows Bridge to Orville",
+					"type": "intro",
+					"mood": "default",
+					"timeStart": 42,
+					"timeEnd": 70,
+					"startpoints": [
+						{
+							"timestamp": 42,
+							"tonality": "C",
+							"measure": "4/4"
+						}
+					],
+					"endpoints": [
+						{
+							"timestamp": 51,
+							"tonality": "C",
+							"measure": "6/8"
+						},
+						{
+							"timestamp": 70,
+							"tonality": "C",
+							"measure": "6/8"
+						}
+					]
+				},
+				{
+					"name": "Orville Main Theme",
+					"type": "loop",
+					"mood": "default",
+					"timeStart": 70,
+					"timeEnd": 95,
+					"startpoints": [
+						{
+							"timestamp": 70,
+							"tonality": "e",
+							"measure": "6/8"
+						}
+					],
+					"endpoints": [
+						{
+							"timestamp": 95,
+							"tonality": "C",
+							"measure": "6/8"
+						}
+					]
+				},
+				{
+					"name": "Orville bridge to Burrows",
+					"type": "outro",
+					"mood": "default",
+					"timeStart": 95,
+					"timeEnd": 132,
+					"startpoints": [
+						{
+							"timestamp": 95,
+							"tonality": "C",
+							"measure": "6/8"
+						}
+					],
+					"endpoints": [
+						{
+							"timestamp": 115,
+							"tonality": "C",
+							"measure": "6/8"
+						},
+						{
+							"timestamp": 132,
+							"tonality": "C",
+							"measure": "4/4"
+						}
+					]
+				}
+			]
+		}
+	]
+}

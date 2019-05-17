@@ -74,6 +74,11 @@ if (os_browser != browser_chrome) {
           <argument>
             <kind>1</kind>
             <string>// Game restart and end
+
+if (audio_is_playing(int_sound)) {
+    show_debug_message("Step 1: trackPos is now:" + string(int_trackPos));
+}
+
 if (keyboard_check(ord('R'))) {
     audio_stop_all();
     game_restart();
@@ -133,11 +138,16 @@ if (keyboard_check_pressed(vk_space)) {
 
 // Get initial track position
 int_trackPos = audio_sound_get_track_position(int_audio);
+show_debug_message("Step 61: Set trackPos to track position = " + string(int_trackPos));
 
 // Set track position to zero if a jump to a new track has just occured
 if (bool_recalculateMov == true) {
-    int_trackPos = int_nextPos;
-    audio_sound_set_track_position(int_audio,int_trackPos);
+    if (abs(int_nextPos - int_trackPos) &gt; 0.5) { 
+        int_trackPos = int_nextPos;
+        show_debug_message("Step 66: Set trackPos to nextPos = " + string(int_trackPos));
+        audio_sound_set_track_position(int_audio,int_trackPos);
+        show_debug_message("Step 68: Set track position to trackPos = " + string(int_trackPos));
+    }
 }
 
 // Reset the recalculation variable since we've just recalculated everything
@@ -157,22 +167,26 @@ if (keyboard_check_pressed(vk_enter)) {
 if (keyboard_check(vk_up)) {
     audio_sound_set_track_position(int_audio, int_trackPos + 0.5);
     int_trackPos = audio_sound_get_track_position(int_audio);
-    bool_recalculateMov = true;
+    show_debug_message("Step 93: Manual movement, track position is now " + string(int_trackPos));
+    exit;
 }
 if (keyboard_check(vk_down)) {
     audio_sound_set_track_position(int_audio, int_trackPos - 0.5);
     int_trackPos = audio_sound_get_track_position(int_audio);
-    bool_recalculateMov = true;
+    show_debug_message("Step 100: Manual movement, track position is now " + string(int_trackPos));
+    exit;
 }
 
 // Main code for calculating movements and deciding on movement / track jumps
 
 if (int_trackPos &gt;= int_movEnd) {
     if (bool_needsToJump == true) {
+        show_debug_message("Step 106: Load next track.");
         scr_loadTrack(int_nextTrack);
     }
     else {
         // Once we reach the end of the movement, we go to the start of the loop
+        show_debug_message("Step 110: Load next movement.");
         scr_loadMovementByType("loop");
     }
     bool_recalculateMov = true;
@@ -182,12 +196,16 @@ if (int_trackPos &gt;= int_movEnd) {
 if ((int_trackPos &gt;= int_closestEnd) || (bool_recalculateMov == true)) {
     // If a jump is pending, do it at this exit point (but not if jump just occured)
     if ((bool_needsToJump == true) &amp;&amp; (bool_recalculateMov == false)) {
+        show_debug_message("Step 120: Load next track.");
         scr_loadTrack(int_nextTrack);
     }
     else {
         // No position changing needed after this movement (carry on as usual)
-        int_nextPos = int_trackPos;
+        show_debug_message("Step 125: Doing nothing here.");
+        //int_nextPos = int_trackPos;
     }
+    
+    show_debug_message("Step 129: Recalculating movements and endpoints...");
     
     // Recalculate which is the current movement
     for(i = 0; i &lt; int_movements; i++) {
@@ -213,10 +231,7 @@ if ((int_trackPos &gt;= int_closestEnd) || (bool_recalculateMov == true)) {
         }
     }
     
-    // No need to recalculate movement if no jump was necessary.
-    if (bool_needsToJump == false) {
-        //bool_recalculateMov = false;
-    }
+    show_debug_message("Step 155: Closest endpoint is now " + string(int_closestEnd));
 }
 
 // Set track information in string
@@ -228,6 +243,8 @@ str_info += "Endpoint before loop: " + string(int_movEnd) + "#";
 if (os_browser != browser_chrome) {
     str_info += "Please use Chrome, otherwise it doesnt work."
 }
+
+show_debug_message("Step 168, trackPos is now: "+string(int_trackPos));
 
 </string>
           </argument>

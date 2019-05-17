@@ -9,7 +9,7 @@
 					"type": "bridge",
 					"mood": "default",
 					"timeStart": 0,
-					"timeEnd": 21,
+					"timeEnd": 22,
 					"startpoints": [
 						{
 							"timestamp": 0,
@@ -19,12 +19,7 @@
 					],
 					"endpoints": [
 						{
-							"timestamp": 15,
-							"tonality": "d",
-							"measure": "4/4"
-						},
-						{
-							"timestamp": 21,
+							"timestamp": 22,
 							"tonality": "C",
 							"measure": "4/4"
 						}
@@ -34,11 +29,11 @@
 					"name": "Burrows Main Theme",
 					"type": "loop",
 					"mood": "default",
-					"timeStart": 21,
+					"timeStart": 22,
 					"timeEnd": 42,
 					"startpoints": [
 						{
-							"timestamp": 21,
+							"timestamp": 22,
 							"tonality": "C",
 							"measure": "4/4"
 						}
@@ -46,19 +41,18 @@
 					"endpoints": [
 						{
 							"timestamp": 30,
-							"tonality": "d",
+							"tonality": "",
 							"measure": "4/4"
 						},
 						{
 							"timestamp": 42,
-							"tonality": "C",
+							"tonality": "",
 							"measure": "4/4"
 						}
 					]
 				}
 			]
 		},
-		
 		{
 			"name": "Orville theme",
 			"track": "example.ogg",
@@ -68,7 +62,7 @@
 					"type": "intro",
 					"mood": "default",
 					"timeStart": 42,
-					"timeEnd": 70,
+					"timeEnd": 51,
 					"startpoints": [
 						{
 							"timestamp": 42,
@@ -81,11 +75,6 @@
 							"timestamp": 51,
 							"tonality": "C",
 							"measure": "6/8"
-						},
-						{
-							"timestamp": 70,
-							"tonality": "C",
-							"measure": "6/8"
 						}
 					]
 				},
@@ -93,18 +82,23 @@
 					"name": "Orville Main Theme",
 					"type": "loop",
 					"mood": "default",
-					"timeStart": 70,
-					"timeEnd": 95,
+					"timeStart": 51,
+					"timeEnd": 90,
 					"startpoints": [
 						{
-							"timestamp": 70,
+							"timestamp": 51,
 							"tonality": "e",
 							"measure": "6/8"
 						}
 					],
 					"endpoints": [
 						{
-							"timestamp": 95,
+							"timestamp": 69,
+							"tonality": "C",
+							"measure": "6/8"
+						},
+						{
+							"timestamp": 90,
 							"tonality": "C",
 							"measure": "6/8"
 						}
@@ -114,7 +108,7 @@
 					"name": "Orville bridge to Burrows",
 					"type": "outro",
 					"mood": "default",
-					"timeStart": 95,
+					"timeStart": 90,
 					"timeEnd": 132,
 					"startpoints": [
 						{
@@ -132,6 +126,59 @@
 						{
 							"timestamp": 132,
 							"tonality": "C",
+							"measure": "4/4"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Burrows slowmo",
+			"track": "slowmo.ogg",
+			"movements": [
+				{
+					"name": "Burrows Intro",
+					"type": "bridge",
+					"mood": "default",
+					"timeStart": 0,
+					"timeEnd": 88,
+					"startpoints": [
+						{
+							"timestamp": 0,
+							"tonality": "C",
+							"measure": "4/4"
+						}
+					],
+					"endpoints": [
+						{
+							"timestamp": 88,
+							"tonality": "C",
+							"measure": "4/4"
+						}
+					]
+				},
+				{
+					"name": "Burrows Main Theme",
+					"type": "loop",
+					"mood": "default",
+					"timeStart": 88,
+					"timeEnd": 168,
+					"startpoints": [
+						{
+							"timestamp": 88,
+							"tonality": "C",
+							"measure": "4/4"
+						}
+					],
+					"endpoints": [
+						{
+							"timestamp": 120,
+							"tonality": "",
+							"measure": "4/4"
+						},
+						{
+							"timestamp": 168,
+							"tonality": "",
 							"measure": "4/4"
 						}
 					]

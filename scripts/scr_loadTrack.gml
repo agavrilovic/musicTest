@@ -54,6 +54,7 @@ else if (str_track != map_selectedTrack[? "track"]) {
     int_audio = audio_play_sound(int_sound,1,1);
 }
 else {
+    show_debug_message("scr_loadTrack 57: Set track position to nextPos");
     audio_sound_set_track_position(int_audio, int_nextPos);
 }
 

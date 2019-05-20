@@ -1,6 +1,54 @@
 {
 	"tracks": [
 		{
+			"name": "Justice RIP",
+			"track": "test.ogg",
+			"movements": [
+				{
+					"name": "Intro",
+					"type": "bridge",
+					"mood": "default",
+					"timeStart": 0,
+					"timeEnd": 13.5,
+					"startpoints": [
+						{
+							"timestamp": 0,
+							"tonality": "C",
+							"measure": "4/4"
+						}
+					],
+					"endpoints": [
+						{
+							"timestamp": 13.5,
+							"tonality": "C",
+							"measure": "4/4"
+						}
+					]
+				},
+				{
+					"name": "Looped Main Theme",
+					"type": "loop",
+					"mood": "default",
+					"timeStart": 13.5,
+					"timeEnd": 106.50002,
+					"startpoints": [
+						{
+							"timestamp": 13.5,
+							"tonality": "C",
+							"measure": "4/4"
+						}
+					],
+					"endpoints": [
+						{
+							"timestamp": 106.50002,
+							"tonality": "",
+							"measure": "4/4"
+						}
+					]
+				}
+			]
+		},
+		{
 			"name": "Burrows theme",
 			"track": "example.ogg",
 			"movements": [
